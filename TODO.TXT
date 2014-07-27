@@ -1,7 +1,7 @@
 
-- retain old copyrights
+- move conversions from AddinXl/AddinCpp to AddinObjects
 
-- in SWIG, consolidate the getParmList() and f() functions
+- retain old copyrights
 
 - fix support for ValueObjects / serialization
 
@@ -10,3 +10,4 @@
 - configure swig so that "make install" delivers the file reposit.swg file to the install directory then configure QuantLibAddin to run swig from the install directory rather than from the swig source tree.
 
 - get swig working off the official QuantLib *.i files
+
