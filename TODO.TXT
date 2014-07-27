@@ -1,6 +1,4 @@
 
-- move conversions from AddinXl/AddinCpp to AddinObjects
-
 - retain old copyrights
 
 - fix support for ValueObjects / serialization
