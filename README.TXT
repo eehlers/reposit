@@ -146,10 +146,10 @@ C:\share\reposit\swig\Examples\objecthandler\simple\Release\AddinXl.xll
 C:\share\reposit\swig\Examples\objecthandler\simple\AddinXl\AddinXl.xlsx
 
 # Mount the windows partition from linux and do
-cd /mnt/hgfs/share/reposit/swig/Examples/reposit/full
+cd /mnt/hgfs/share/reposit/swig/Examples/reposit/full/FullLibAddin/swig
 export REPOSIT_DIR=/home/erik/reposit
 export LD_LIBRARY_PATH=$REPOSIT_DIR/install/lib
-$REPOSIT_DIR/swig/preinst-swig -prefix sl -c++ -reposit simple.i
+$REPOSIT_DIR/swig/swig -I$REPOSIT_DIR/swig/Lib/reposit -c++ -reposit -prefix fl full.i
 
 QuantLib
 ========
