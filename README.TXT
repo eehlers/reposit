@@ -157,10 +157,10 @@ QuantLib
 QuantLibAddin/QuantLibXL
 =======
 # Mount the windows partition from linux and do
-cd /mnt/hgfs/share/reposit/quantlib/QuantLibAddin2
+cd /mnt/hgfs/share/reposit/quantlib/QuantLibAddin2/swig
 export REPOSIT_DIR=/home/erik/reposit
 export LD_LIBRARY_PATH=$REPOSIT_DIR/install/lib
-$REPOSIT_DIR/swig/preinst-swig -prefix ql -c++ -reposit quantlib.i
+$REPOSIT_DIR/swig/swig -I$REPOSIT_DIR/swig/Lib/reposit -c++ -reposit -prefix ql quantlib.i
 
 # Start Excel and load
 C:\share\reposit\QuantLibAddin\Release\AddinXlHw.xll

@@ -7,7 +7,13 @@
 
 - in linux QuantLibAddin build don't enter m4 subdir
 
-- configure swig so that "make install" delivers the file reposit.swg file to the install directory then configure QuantLibAddin to run swig from the install directory rather than from the swig source tree.
+- configure swig so that "make install" delivers the file reposit.swg file to
+  the install directory then configure QuantLibAddin to run swig from the
+  install directory rather than from the swig source tree.
 
 - get swig working off the official QuantLib *.i files
+
+- implement validation to check for addin function names that cause conflicts
+  in Excel (for example a function name in the range A1-XFD1048576 that also
+  corresponds to the name of a cell on the big grid) 
 
