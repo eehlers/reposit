@@ -154,7 +154,7 @@ C:\share\reposit\swig\Examples\reposit\simple\AddinXl\AddinXl.xlsx
 cd /mnt/hgfs/share/reposit/swig/Examples/reposit/full/FullLibAddin/swig
 export REPOSIT_DIR=/home/erik/reposit
 export LD_LIBRARY_PATH=$REPOSIT_DIR/install/lib
-$REPOSIT_DIR/swig/swig -I$REPOSIT_DIR/swig/Lib/reposit -c++ -reposit -prefix fl full.i
+$REPOSIT_DIR/swig/preinst-swig -c++ -reposit -prefix fl full.i
 
 # Start Excel and load
 C:\share\reposit\swig\Examples\reposit\full\Release\AddinXl.xll
@@ -169,7 +169,7 @@ QuantLibAddin/QuantLibXL
 cd /mnt/hgfs/share/reposit/quantlib/QuantLibAddin2/swig
 export REPOSIT_DIR=/home/erik/reposit
 export LD_LIBRARY_PATH=$REPOSIT_DIR/install/lib
-$REPOSIT_DIR/swig/swig -I$REPOSIT_DIR/swig/Lib/reposit -c++ -reposit -prefix ql quantlib.i
+$REPOSIT_DIR/swig/preinst-swig -c++ -reposit -prefix ql quantlib.i
 
 # Start Excel and load
 C:\share\reposit\QuantLibAddin\Release\AddinXl.xll
