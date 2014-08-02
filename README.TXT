@@ -84,12 +84,12 @@ make
 cd $REPOSIT_DIR/swig/Examples/simple/Main
 ./mainSimpleLibAddin
 
-cd $REPOSIT_DIR/swig/Examples/reposit/full
-export LD_LIBRARY_PATH=$REPOSIT_DIR/install/lib:$REPOSIT_DIR/swig/Examples/reposit/full/lib
+cd $REPOSIT_DIR/swig/Examples/reposit/complex
+export LD_LIBRARY_PATH=$REPOSIT_DIR/install/lib:$REPOSIT_DIR/swig/Examples/reposit/complex/lib
 make SWIG
 make
-cd $REPOSIT_DIR/swig/Examples/reposit/full/FullLibAddin/Main
-./mainFullLibAddin
+cd $REPOSIT_DIR/swig/Examples/reposit/complex/ComplexLibAddin/Main
+./mainComplexLibAddin
 
 QuantLib
 ========
@@ -151,14 +151,14 @@ C:\share\reposit\swig\Examples\reposit\simple\Release\AddinXl.xll
 C:\share\reposit\swig\Examples\reposit\simple\AddinXl\AddinXl.xlsx
 
 # Mount the windows partition from linux and do
-cd /mnt/hgfs/share/reposit/swig/Examples/reposit/full/FullLibAddin/swig
+cd /mnt/hgfs/share/reposit/swig/Examples/reposit/complex/ComplexLibAddin/swig
 export REPOSIT_DIR=/home/erik/reposit
 export LD_LIBRARY_PATH=$REPOSIT_DIR/install/lib
-$REPOSIT_DIR/swig/preinst-swig -c++ -reposit -prefix fl full.i
+$REPOSIT_DIR/swig/preinst-swig -c++ -reposit -prefix fl complex.i
 
 # Start Excel and load
-C:\share\reposit\swig\Examples\reposit\full\Release\AddinXl.xll
-C:\share\reposit\swig\Examples\reposit\full\AddinXl\AddinXl.xlsx
+C:\share\reposit\swig\Examples\reposit\complex\Release\AddinXl.xll
+C:\share\reposit\swig\Examples\reposit\complex\AddinXl\AddinXl.xlsx
 
 QuantLib
 ========
