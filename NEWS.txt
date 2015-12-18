@@ -1,2 +1,6 @@
-For a rundown of changes per ObjectHandler release please visit
-http://www.objecthandler.org/history.html
+
+A summary of this project's revision history is available at the following
+link:
+
+http://quantlib.org/reposit/docs/latest/history.html
+

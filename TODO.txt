@@ -1,11 +1,11 @@
 
-todo.txt for ObjectHandler
-==========================
+todo.txt for reposit
+====================
 
 to see a summary of recent activity on this project please visit
-http://www.objecthandler.org/history.html
+http://quantlib.org/reposit/docs/latest/history.html
 
 if you're interested in contributing to the project or need
-further information please send email to
-quantlib-users@lists.sf.net
+further information please consult the mailing list at
+https://lists.sourceforge.net/lists/listinfo/quantlib-users
 
