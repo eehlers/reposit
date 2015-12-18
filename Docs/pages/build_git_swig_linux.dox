@@ -173,7 +173,8 @@ cd $REPOSIT_DIR/QuantLibAddin
     --prefix=$REPOSIT_DIR/install \
     --with-boost-include=$REPOSIT_DIR/install/include \
     --with-boost-lib=$REPOSIT_DIR/install/lib \
-    --with-swig=$REPOSIT_DIR/swig
+    --with-swig=$REPOSIT_DIR/swig \
+    CXXFLAGS=-Wno-unused-local-typedefs
 export LD_LIBRARY_PATH=$REPOSIT_DIR/install/lib
 make SWIG
 make
