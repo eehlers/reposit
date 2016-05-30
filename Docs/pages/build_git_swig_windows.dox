@@ -181,13 +181,13 @@ $REPOSIT_DIR\swig\Examples\reposit\complex\ComplexLibXL\Workbooks\AddinXl.xlsx
 Build the solution:
 
 \verbatim
-$REPOSIT_DIR\quantlib\QuantLibAddin2\QuantLibAddin_vc9.sln
+$REPOSIT_DIR\quantlib\QuantLibAddin\QuantLibAddin_vc9.sln
 \endverbatim
 
 Run the executable:
 
 \verbatim
-$REPOSIT_DIR\quantlib\QuantLibAddin2\Release\MainQuantLibAddin.exe
+$REPOSIT_DIR\quantlib\QuantLibAddin\Release\MainQuantLibAddin.exe
 \endverbatim
 
 \section build_git_swig_windows_sec_10 10. QuantLibXL
@@ -195,7 +195,7 @@ $REPOSIT_DIR\quantlib\QuantLibAddin2\Release\MainQuantLibAddin.exe
 Build the solution:
 
 \verbatim
-$REPOSIT_DIR\quantlib\QuantLibXL2\QuantLibXL_full_vc9.sln
+$REPOSIT_DIR\quantlib\QuantLibXL\QuantLibXL_full_vc9.sln
 \endverbatim
 
 For instructions on how to use the XLL, please refer to the following document:
@@ -224,7 +224,7 @@ std::string name() const;
 And paste it into this file, into the public section of the declaration of class InterestRateIndex:
 
 \verbatim
-$REPOSIT_DIR\quantlib\QuantLibAddin2\swig\functions\indexes.i
+$REPOSIT_DIR\quantlib\QuantLibAddin\swig\functions\indexes.i
 \endverbatim
 
 Rebuild the project.  You should find that function qlInterestRateIndexName()
