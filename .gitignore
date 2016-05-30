@@ -26,3 +26,4 @@ Makefile.in
 *.user
 lib
 *.suo
+*.ncb
