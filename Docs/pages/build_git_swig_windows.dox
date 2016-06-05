@@ -21,7 +21,7 @@
  The members of the QuantLib Group are listed in the QuantLib License
 */
 
-/*! \page build_git_swig_windows Build - Compiling reposit On Windows From A git Clone
+/*! \page build_git_swig_windows Build - Compiling reposit From A git Clone On Windows
 
 <div align="center"><small><a href="build_overview.html">back to installation index</a></small></div>
 
