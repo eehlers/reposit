@@ -23,11 +23,13 @@
 
 /*! \page comparison Comparison of Old and New QuantLibXL Builds
 
-The old QuantLibXL build is based on ObjectHandler and gensrc.  This build is stable.
+There are two builds for QuantLibXL:
 
-The new QuantLibXL build is based on reposit.  This build is a work in progress and is unstable.
+\li \b old: Addin source code is generated using gensrc, a bespoke Python script.  This build is stable.
 
-The table below summarizes the differences between the two builds as of the 1.7 release.
+\li \b new: Addin source code is generated using reposit, a new SWIG module.  This build is a work in progress and is unstable.
+
+The table below summarizes the differences between the two builds as of the 1.8 release.
 
 <table summary="omparison" border="1" cellpadding="5">
 <tr><th>Feature</th><th>Old Build</th><th>New Build</th></tr>
@@ -43,8 +45,45 @@ The table below summarizes the differences between the two builds as of the 1.7 
 <tr><td>Excel</td><td><img src="images/mark_check.png"></td><td><img src="images/mark_check.png"></td></tr>
 <tr><td>LibreOffice Calc</td><td><img src="images/mark_check.png"></td><td><img src="images/mark_x.png"></td></tr>
 <tr><td>C#</td><td><img src="images/mark_x.png"></td><td><img src="images/mark_check.png"></td></tr>
-<tr><td>=countify</td><td><img src="images/mark_x.png"></td><td><img src="images/mark_check.png"></td></tr>
 </table>
+
+\section sec_web Web Sites
+
+\par Here are the web sites relating to the old build:
+http://quantlib.org/gensrc/index.html \n
+http://quantlib.org/objecthandler/index.html \n
+http://quantlib.org/quantlibaddin/index.html \n
+http://quantlib.org/quantlibxl/index.html
+
+\par Here is the web site relating to the new build:
+http://quantlib.org/reposit/index.html
+
+\section Releases
+
+\par Here are the release directories relating to the old build:
+https://sourceforge.net/projects/quantlib/files/QuantLib/ \n
+https://sourceforge.net/projects/quantlib/files/QuantLibXL/ \n
+https://sourceforge.net/projects/quantlib/files/QuantLibAddin/ \n
+https://sourceforge.net/projects/quantlib/files/ObjectHandler/
+
+\par Here are the release directories relating to the new build:
+https://sourceforge.net/projects/quantlib/files/QuantLib/ \n
+https://sourceforge.net/projects/quantlib/files/reposit/
+
+\section sec_git git repos
+
+\par Here are the git repos relating to the old build:
+https://github.com/lballabio/QuantLib.git \n
+https://github.com/paolomazzocchi/QuantLibAddin-Old.git
+
+You have to create the QuantLib repo as a subdirecory of the QuantLibAddin-Old repo.
+
+\par Here are the git repos relating to the new build:
+https://github.com/lballabio/QuantLib.git \n
+https://github.com/eehlers/QuantLibAddin.git \n
+https://github.com/eehlers/QuantLibXL.git \n
+https://github.com/eehlers/reposit.git \n
+https://github.com/eehlers/swig.git
 
 */
 
