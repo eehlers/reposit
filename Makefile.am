@@ -1,5 +1,5 @@
 
-SUBDIRS = rp rpxl xlsdk Examples
+SUBDIRS = rp rpxl xlsdk Examples Docs
 
 EXTRA_DIST = \
     Announce.txt \
@@ -13,18 +13,9 @@ EXTRA_DIST = \
     README.txt \
     TODO.txt
 
-#.PHONY: docs docs-online docs-dist docs-clean
-#BASEPATH = @abs_top_srcdir@
-#docs:
-#	BASEPATH=$(BASEPATH) $(MAKE) -C Docs docs-all
-#html-local:
-#	BASEPATH=$(BASEPATH) $(MAKE) -C Docs docs-html
-#docs-dist:
-#	BASEPATH=$(BASEPATH) $(MAKE) -C Docs docs-dist
-#docs-online:
-#	BASEPATH=$(BASEPATH) $(MAKE) -C Docs docs-online
-#docs-online-dist:
-#	BASEPATH=$(BASEPATH) $(MAKE) -C Docs docs-online-dist
-#docs-clean:
-#	$(MAKE) -C Docs docs-clean
+.PHONY: docs docs-clean
+docs:
+	$(MAKE) -C Docs docs-html
+docs-clean:
+	$(MAKE) -C Docs docs-clean
 
