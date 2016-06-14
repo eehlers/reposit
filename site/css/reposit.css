@@ -8,7 +8,7 @@ color: white;
 }
 
 .navbar .nav > li > a:hover {
-  color: #074BB4 ;
+  color: #074BB4;
 }
 
 .navbar-brand,
@@ -49,4 +49,5 @@ h2 {
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
     background: #074BB4;
+    border-color: #074BB4;
 }
