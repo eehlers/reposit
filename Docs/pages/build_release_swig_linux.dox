@@ -65,7 +65,7 @@ Configure and build reposit.
 cd $REPOSIT_DIR
 tar xzvf reposit-1.8.0.tar.gz
 cd $REPOSIT_DIR/reposit-1.8.0
-./configure --without-log4cxx \
+./configure \
     --prefix=$REPOSIT_DIR/install \
     CPPFLAGS=-I$REPOSIT_DIR/install/include \
     LDFLAGS=-L$REPOSIT_DIR/install/lib \

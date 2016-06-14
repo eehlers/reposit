@@ -69,12 +69,9 @@ Go to the
 
 Download pcre-8.35.zip to $REPOSIT_DIR and uncompress.
 
-Download log4cxx-0.10.0f5.zip to $REPOSIT_DIR and uncompress.
-
 Your build directory should now look like this:
 
 \verbatim
-$REPOSIT_DIR\log4cxx
 $REPOSIT_DIR\pcre-8.35
 $REPOSIT_DIR\QuantLib
 $REPOSIT_DIR\QuantLibAddin

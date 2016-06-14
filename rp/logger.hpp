@@ -26,20 +26,6 @@
 
 #include <rp/singleton.hpp>
 
-// Some older builds of log4cxx did not include file log4cxxdefines.h.
-// If the #include below fails, it means either that you have the wrong
-// version of log4cxx, or that your log4cxx installation (if any) cannot
-// be found at all.
-#include <log4cxx/log4cxxdefines.h>
-#if LOG4CXX_VERSION != 0x001000f6
-    #error using an incorrect version of log4cxx, please update.
-#endif
-
-#include <log4cxx/logger.h>
-#include <log4cxx/simplelayout.h>
-#include <log4cxx/fileappender.h>
-#include <log4cxx/consoleappender.h>
-
 namespace reposit {
 
     //! Wrapper for the logging framework.
@@ -111,17 +97,12 @@ namespace reposit {
 
         virtual ~Logger(){}
     private:
-        Logger();
-        //log4cxx::LoggerPtr _logger;
-        //log4cxx::LayoutPtr _layout;
-        //log4cxx::AppenderPtr _fileAppender;
-        //log4cxx::AppenderPtr _consoleAppender;
-        log4cxx::LayoutPtr getLayout();
-
-        //log4cxx::AppenderPtr fileAppender_;
+        Logger() {}
         std::string filename_;
+        int level_;
     };
 
 }
 
 #endif
+

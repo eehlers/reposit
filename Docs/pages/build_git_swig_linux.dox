@@ -60,7 +60,7 @@ Configure and build.
 \verbatim
 cd $REPOSIT_DIR/reposit
 ./autogen.sh
-./configure --without-log4cxx \
+./configure \
     --prefix=$REPOSIT_DIR/install \
     CPPFLAGS=-I$REPOSIT_DIR/install/include \
     LDFLAGS=-L$REPOSIT_DIR/install/lib \

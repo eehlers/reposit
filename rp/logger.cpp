@@ -21,230 +21,158 @@
     #include <rp/config.hpp>
 #endif
 #include <rp/rpdefines.hpp>
-
-#ifdef RP_INCLUDE_LOG4CXX
-
 #include <rp/logger.hpp>
 #include <rp/exception.hpp>
-#include <log4cxx/helpers/exception.h>
-/* Use BOOST_MSVC instead of _MSC_VER since some other vendors (Metrowerks,
-for example) also #define _MSC_VER
-*/
-#ifdef BOOST_MSVC
-#  define BOOST_LIB_DIAGNOSTIC
-#  include <log4cxx/auto_link.hpp>
-#  undef BOOST_LIB_DIAGNOSTIC
-#endif
 #include <ostream>
-#include <boost/filesystem.hpp>
-#include <log4cxx/helpers/transcoder.h>
-
 #include <iostream>
-using namespace log4cxx;
 
+#ifdef RP_INCLUDE_BOOST_LOGGING
 
-namespace reposit {
+#define BOOST_LOG_DYN_LINK
 
-    Logger::Logger() {
+#include <boost/filesystem.hpp>
+#include <boost/log/core.hpp>
+#include <boost/log/sinks.hpp>
+#include <boost/log/trivial.hpp>
+#include <boost/log/utility/setup/file.hpp>
+#include <boost/log/utility/setup/console.hpp>
 
-        try {
-            log4cxx::LoggerPtr _logger = log4cxx::Logger::getRootLogger();
-            //_logger->setLevel(Level::OFF);
-            _logger->setLevel(Level::getOff());
-            //_layout = LayoutPtr(new SimpleLayout());
-               
+boost::shared_ptr< boost::log::sinks::synchronous_sink< boost::log::sinks::text_ostream_backend > > sinkStdout;
+boost::shared_ptr< boost::log::sinks::synchronous_sink< boost::log::sinks::text_file_backend > > sinkFile;
 
-        } catch (helpers::Exception &e) {
-            //RP_FAIL("Logger::Logger: error initializing: " + e.getMessage());
-            std::string str = "Logger::Logger: error initializing: ";
-            str += e.what();
-            RP_FAIL(str);
+void reposit::Logger::setFile(const std::string &logFileName,
+                     const int &logLevel) {
+
+    filename_ = std::string();
+    // Create a boost path object from the std::string.
+    boost::filesystem::path path(logFileName);
+
+    // If a parent directory has been specified then ensure it exists.
+    if (!path.parent_path().empty()) {
+        RP_REQUIRE(boost::filesystem::exists(path.parent_path()),
+                   "Invalid parent path : " << logFileName);
+    }
+
+    try {
+        boost::log::core::get()->remove_sink(sinkFile);
+        sinkFile = boost::log::add_file_log(logFileName);
+        setLevel(logLevel);
+        filename_ = logFileName;
+    } catch (const std::exception &e) {
+        RP_FAIL("Logger::logSetFile: unable to set logfile - " << logFileName << " - " << e.what());
+    }
+}
+
+void reposit::Logger::setConsole(
+    const int &console,
+    const int &logLevel) {
+    try {
+        boost::log::core::get()->remove_sink(sinkStdout);
+        if (console)
+            sinkStdout = boost::log::add_console_log(std::cout);
+        setLevel(logLevel);
+    } catch (const std::exception &e) {
+        RP_FAIL("Logger::logSetFile: unable to set console - " << e.what());
+    }
+}
+
+void reposit::Logger::setLevel(const int &logLevel) {
+    try {
+        level_ = -1;
+        switch (logLevel) {
+            case 0:
+                boost::log::core::get()->set_logging_enabled(false);
+                break;
+            case 1:
+                boost::log::core::get()->set_logging_enabled(true);
+                boost::log::core::get()->set_filter(boost::log::trivial::severity >= boost::log::trivial::fatal);
+                break;
+            case 2:
+                boost::log::core::get()->set_logging_enabled(true);
+                boost::log::core::get()->set_filter(boost::log::trivial::severity >= boost::log::trivial::error);
+                break;
+            case 3:
+                boost::log::core::get()->set_logging_enabled(true);
+                boost::log::core::get()->set_filter(boost::log::trivial::severity >= boost::log::trivial::warning);
+                break;
+            case 4:
+                boost::log::core::get()->set_logging_enabled(true);
+                boost::log::core::get()->set_filter(boost::log::trivial::severity >= boost::log::trivial::info);
+                break;
+            case 5:
+                boost::log::core::get()->set_logging_enabled(true);
+                boost::log::core::get()->set_filter(boost::log::trivial::severity >= boost::log::trivial::debug);
+                break;
+            default:
+                RP_FAIL("Logger::setLogLevel: invalid logLevel: " << logLevel);
         }
-
+        level_ = logLevel;
+    } catch (const std::exception &e) {
+        RP_FAIL("Logger::logSetFile: unable to set log level - " << e.what());
     }
+}
 
-    log4cxx::LayoutPtr Logger::getLayout(){
-        //static log4cxx::LayoutPtr _layout = NULL;
-        //if(_layout == NULL){
-        static log4cxx::LayoutPtr _layout = 0;
-        if(_layout == 0){
-            _layout = LayoutPtr(new SimpleLayout());
-        }
-
-        return _layout;
-    }
-
-    void Logger::setFile(const std::string &logFileName,
-                         const int &logLevel) {
-
-            // Create a boost path object from the std::string.
-            boost::filesystem::path path(logFileName);
-
-            // If a parent directory has been specified then ensure it exists.
-            if ( !path.branch_path().empty() ) {
-                RP_REQUIRE(boost::filesystem::exists(path.branch_path()),
-                           "Invalid parent path : " << logFileName);
-            }
-            // deprecated branch_path() observer has been used above for boost 1.35
-            // backward compatibility. It should be replaced by parent_path()
-
-            try {
-
-                log4cxx::LoggerPtr _logger = log4cxx::Logger::getRootLogger();
-                static log4cxx::AppenderPtr _fileAppender;
-
-                _logger->removeAppender(_fileAppender);
-
-                LogString fileName;
-                log4cxx::helpers::Transcoder::decode(logFileName, fileName);
-
-                _fileAppender = AppenderPtr(new FileAppender(getLayout(),  fileName));
-                _logger->addAppender(_fileAppender);
-                setLevel(logLevel);
-                filename_ = logFileName;
-
-            } catch (helpers::Exception &e) {
-                //RP_FAIL("Logger::logSetFile: unable to set logfile: " + e.getMessage());
-                std::string str = "Logger::logSetFile: unable to set logfile: ";
-                str += e.what();
-                RP_FAIL(str);
-            }
-
-
-    }
-
-    void Logger::setConsole(
-        const int &console,
-        const int &logLevel) {
-            try {
-                log4cxx::LoggerPtr _logger = log4cxx::Logger::getRootLogger();
-                static log4cxx::AppenderPtr _consoleAppender;
-                _logger->removeAppender(_consoleAppender);
-                if (console) {
-                    _consoleAppender = AppenderPtr(new ConsoleAppender(getLayout()));
-                    _logger->addAppender(_consoleAppender);
-                }
-                setLevel(logLevel);
-            } catch (helpers::Exception &e) {
-                //RP_FAIL("Logger::logSetFile: unable to set logfile: " + e.getMessage());
-                std::string str = "Logger::logSetFile: unable to set logfile: ";
-                str += e.what();
-                RP_FAIL(str);
-            }
-    }
-
-    void Logger::setLevel(const int &logLevel) {
+void reposit::Logger::writeMessage(const std::string &message,
+                          const int &level) {
+        // client applications call this function from within their
+        // catch() clauses so this function must not throw.
         try {
-            log4cxx::LoggerPtr _logger = log4cxx::Logger::getRootLogger();
             
-            switch (logLevel) {
-                case 0:
-                    //_logger->setLevel(Level::OFF);
-                    _logger->setLevel(Level::getOff());
-                    break;
-                case 1:
-                    //_logger->setLevel(Level::FATAL);
-                    _logger->setLevel(Level::getFatal());
-                    break;
-                case 2:
-                    //_logger->setLevel(Level::ERROR);
-                    _logger->setLevel(Level::getError());
-                    break;
-                case 3:
-                    //_logger->setLevel(Level::WARN);
-                    _logger->setLevel(Level::getWarn());
-                    break;
-                case 4:
-                    //_logger->setLevel(Level::INFO);
-                    _logger->setLevel(Level::getInfo());
-                    break;
-                case 5:
-                    //_logger->setLevel(Level::DEBUG);
-                    _logger->setLevel(Level::getDebug());
-                    break;
-                default:
-                    RP_FAIL("Logger::setLogLevel: invalid logLevel: " << logLevel);
+            switch (level) {
+            case 1:
+                BOOST_LOG_TRIVIAL(fatal) << message;
+                break;
+            case 2:
+                BOOST_LOG_TRIVIAL(error) << message;
+                break;
+            case 3:
+                BOOST_LOG_TRIVIAL(warning) << message;
+                break;
+            case 4:
+                BOOST_LOG_TRIVIAL(info) << message;
+                break;
+            case 5:
+                BOOST_LOG_TRIVIAL(debug) << message;
+                break;
             }
-        } catch (helpers::Exception &e) {
-            //RP_FAIL("Logger::Logger: error initializing: " + e.getMessage());
-            std::string str = "Logger::Logger: error initializing: ";
-            str += e.what();
-            RP_FAIL(str);
-        }
-    }
+        } catch (...) {}
+}
 
-    void Logger::writeMessage(const std::string &message,
-                              const int &level) {
-            // client applications call this function from within their
-            // catch() clauses so this function must not throw.
-            try {
-                log4cxx::LoggerPtr _logger = log4cxx::Logger::getRootLogger();
-                
-                switch (level) {
-                case 1:
-                    LOG4CXX_FATAL(_logger, message);
-                    break;
-                case 2:
-                    LOG4CXX_ERROR(_logger, message);
-                    break;
-                case 3:
-                    LOG4CXX_WARN(_logger, message);
-                    break;
-                case 4:
-                    LOG4CXX_INFO(_logger, message);
-                    break;
-                case 5:
-                    LOG4CXX_DEBUG(_logger, message);
-                    break;
-                }
-            } catch (...) {}
-    }
+//get log file name
+const std::string reposit::Logger::file() const {
+    return filename_;
+}
 
-    //get log file
-    const std::string Logger::file() const {
-        try{
-            /*
-            if(fileAppender_ == 0)
-                throw "";
-            std::string filename;
+//get log level
+const int reposit::Logger::level() const {
+    return level_;
+}
 
-            log4cxx::helpers::Transcoder::encode(fileAppender_->getName(), filename);
-            return filename;
-            */
-            return filename_;
-        }
-        catch(...){
-            RP_FAIL("Logger::LogFile: unable to get logfile.");
-        }
-    }
+#else
 
-    //get log level
-    const int Logger::level() const {
-        const LevelPtr& level = log4cxx::Logger::getRootLogger()->getLevel();
+void reposit::Logger::setFile(const std::string &logFileName,
+                     const int &logLevel) {
+}
 
-        int value = -1;
-        if(level == Level::getOff())
-            value = 0;
-        else if(level == Level::getFatal())                
-            value = 1;
-        else if(level == Level::getError())  
-            value = 2;
-        else if(level == Level::getWarn()) 
-            value = 3;
-        else if(level == Level::getInfo()) 
-            value = 4;
-        else if(level == Level::getDebug())
-            value = 5;
-        else if(level == Level::getTrace())
-            value = 6;
-          else if(level == Level::getAll())
-            value = 7;
+void reposit::Logger::setConsole(
+    const int &console,
+    const int &logLevel) {
+}
 
-		return value ;
- 
-    }
+void reposit::Logger::setLevel(const int &logLevel) {
+}
 
+void reposit::Logger::writeMessage(const std::string &message,
+                          const int &level) {
+    std::cout << message << std::endl;
+}
 
+const std::string reposit::Logger::file() const {
+    return std::string();
+}
+
+const int reposit::Logger::level() const {
+    return 0;
 }
 
 #endif

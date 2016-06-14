@@ -29,6 +29,11 @@ BUILD
 
 - Fixed glitch in Visual Studio project which was causing a conflict between
   the 32- and 64-bit builds.
+- Boost.Log is now used for logging instead of log4cxx.  So the build no longer
+  requires log4cxx/apr/apr-utils.  On linux if for some reason you
+  want to disable logging you can still do that by passing the argument
+  --without-logging to configure, in which case any log messages just go
+  to stdout.
 
 FUNCTIONALITY
 
@@ -36,8 +41,8 @@ FUNCTIONALITY
 
 REQUIRED PACKAGES
 
-- Boost version 1.34.1 or later
-- log4cxx version 0.10.0f6 (optional on linux)
+- Boost.  If you require logging then you need boost 1.54.  If not then you can
+  use much older versions of boost (back to 1.34?).
 - reposit SWIG module
 - PCRE (a prerequeisite of SWIG)
 

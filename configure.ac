@@ -46,19 +46,14 @@ AC_LANG([C++])
 
 # Confirm existence of dependencies
 
-# Configure and validate the path to log4cxx
+# Configure logging
 
-AC_ARG_WITH([log4cxx],
-    [AS_HELP_STRING([--without-log4cxx], [disable support for log4cxx, write log messages to stdout])],
+AC_ARG_WITH([logging],
+    [AS_HELP_STRING([--without-logging], [disable support for logging, write log messages to stdout])],
     [],
-    [with_log4cxx=yes])
-AS_IF([test "x$with_log4cxx" != xno],
-    [AC_CHECK_HEADER(
-        [log4cxx/logger.h],
-        [HAVE_LOG4CXX=1],
-        [AC_MSG_ERROR([log4cxx test failed (--without-log4cxx to disable)])])])
-AM_CONDITIONAL([RP_LINK_LOG4CXX], [test "$HAVE_LOG4CXX" -eq 1])
-AS_IF([test "$HAVE_LOG4CXX" -eq 1], AC_DEFINE([RP_INCLUDE_LOG4CXX], [1], [Support for logging]))
+    [with_logging=yes])
+AM_CONDITIONAL([RP_LINK_BOOST_LOGGING], [test "x$with_logging" != xno])
+AS_IF([test "x$with_logging" != xno], AC_DEFINE([RP_INCLUDE_BOOST_LOGGING], [1], [Support for logging]))
 
 # Check for tools needed for building documentation
 

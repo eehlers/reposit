@@ -28,3 +28,4 @@ rpxl/rpxllib/build/
 *.user
 xll
 xlsdk/build/
+config.hpp.in~

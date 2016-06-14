@@ -31,8 +31,8 @@ EXTRA_DIST = \
 
 lib_LTLIBRARIES = libreposit.la
 LDFLAGS = -lboost_filesystem -lboost_regex -lboost_serialization -release $(PACKAGE_VERSION)
-if RP_LINK_LOG4CXX
-LDFLAGS += -llog4cxx
+if RP_LINK_BOOST_LOGGING
+LDFLAGS += -lboost_log
 endif
 
 libreposit_la_SOURCES = \

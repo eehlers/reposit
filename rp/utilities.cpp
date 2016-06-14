@@ -24,20 +24,17 @@
 #include <rp/config.hpp>
 #endif
 #include <rp/utilities.hpp>
-#ifdef RP_INCLUDE_LOG4CXX
 #include <rp/logger.hpp>
-#endif
 #include <rp/repository.hpp>
 #include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/split.hpp>
 #include <sstream>
 #include <ctime>
 #include <sys/timeb.h>
-//#include <stdio.h>
 #include <iostream>
 
-#define            SECS_PER_DAY    (60 * 60 * 24)
-#define            MILLISECS_PER_DAY    (1000 * SECS_PER_DAY)
+#define SECS_PER_DAY        (60 * 60 * 24)
+#define MILLISECS_PER_DAY   (1000 * SECS_PER_DAY)
 
 using boost::algorithm::token_compress_off;
 using boost::algorithm::token_compress_on;
@@ -55,70 +52,42 @@ namespace reposit {
 
     std::string logSetFile(const std::string &logFileName,
                            const int &logLevel) {
-#ifdef RP_INCLUDE_LOG4CXX
         Logger::instance().setFile(logFileName, logLevel);
         return logFileName;
-#else
-        return std::string();
-#endif
     }
 
     DLL_API void logWriteMessage(const std::string &message,
                                  const int &level) {
-#ifdef RP_INCLUDE_LOG4CXX
         Logger::instance().writeMessage(message, level);
-#else
-        std::cout << "LOG - " << message << std::endl;
-#endif
     }
 
     void logSetLevel(const int &logLevel) {
-#ifdef RP_INCLUDE_LOG4CXX
         Logger::instance().setLevel(logLevel);
-#endif
     }
 
     const std::string logFile(){
-#ifdef RP_INCLUDE_LOG4CXX
         return Logger::instance().file();
-#else
-        return std::string();
-#endif
     }
 
     const int logLevel(){
-#ifdef RP_INCLUDE_LOG4CXX
         return Logger::instance().level();
-#else
-        return 0;
-#endif
     }
 
     void logSetConsole(const int &console,
                       const int &logLevel) {
-#ifdef RP_INCLUDE_LOG4CXX
             Logger::instance().setConsole(console, logLevel);
-#endif
     }
 
     void logObject(const std::string &objectID) {
         std::ostringstream msg;
         Repository::instance().dumpObject(objectID, msg);
-#ifdef RP_INCLUDE_LOG4CXX
         Logger::instance().writeMessage(msg.str());
-#else
-        std::cout << "LOG - " << msg.str() << std::endl;
-#endif
     }
 
     void logAllObjects() {
         std::ostringstream msg;
         Repository::instance().dump(msg);
-#ifdef RP_INCLUDE_LOG4CXX
         Logger::instance().writeMessage(msg.str());
-#else
-        std::cout << "LOG - " << msg.str() << std::endl;
-#endif
     }
 
     std::vector<std::string> split(const std::string& line,
