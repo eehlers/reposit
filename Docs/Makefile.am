@@ -1,7 +1,14 @@
 
-EXTRA_DIST = Doxyfile
+EXTRA_DIST = \
+    docs.vcproj \
+    Doxyfile \
+    Makefile.vc
 
 DOXYGEN_INPUT := $(wildcard pages/*.dox)
+
+all: docs-html
+
+clean: docs-clean
 
 .PHONY: docs-html docs-clean
 
