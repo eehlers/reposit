@@ -23,6 +23,16 @@
 
 /*! \mainpage reposit
 
+<blockquote>You hide your boat in the ravine and your fish net in the swamp and
+tell yourself that they will be safe.  But in the middle of the night a strong
+man shoulders them and carries them off, and in your stupidity you don't know
+why it happened.  You think that you do right to hide little things in big
+ones, and yet they get away from you.  But if you hide the world in the world,
+there is no space left for it to be lost in.  This is the real truth about
+things.</blockquote>
+
+<p><i>-Chuang Tzu</i></p>
+
 \section idx_overview Overview
 
 %reposit implements a repository in which objects may be instantiated,
