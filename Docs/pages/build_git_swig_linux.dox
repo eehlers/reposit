@@ -118,7 +118,7 @@ cd $REPOSIT_DIR/swig/Examples/reposit/simple
 export LD_LIBRARY_PATH=$REPOSIT_DIR/install/lib:$REPOSIT_DIR/swig/Examples/reposit/simple/lib
 make SWIG
 make
-cd $REPOSIT_DIR/swig/Examples/simple/Main
+cd $REPOSIT_DIR/swig/Examples/reposit/simple/Main
 ./mainSimpleLibAddin
 \endverbatim
 
