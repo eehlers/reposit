@@ -1,3 +1,4 @@
+- dynamic build
 
 todo.txt for reposit
 ====================
