@@ -8,13 +8,13 @@ import glob
 import shutil
 
 SUB_DIRS = (
-    'QuantLibAddin2/qlo',
-    'QuantLibAddin2/qlo/valueobjects',
-    'QuantLibAddin2/qlo/serialization/create',
-    'QuantLibAddin2/qlo/serialization/register',
-    'QuantLibAddin2/AddinCpp',
-    'QuantLibXL2/qlxl/functions',
-    'QuantLibXL2/qlxl/register'
+    'QuantLibAddin/qlo',
+    'QuantLibAddin/qlo/valueobjects',
+    'QuantLibAddin/qlo/serialization/create',
+    'QuantLibAddin/qlo/serialization/register',
+    #'QuantLibAddin2/AddinCpp',
+    'QuantLibXL/qlxl/functions',
+    'QuantLibXL/qlxl/register'
 )
 
 OUT_ROOT_DIR = './diffout'
