@@ -118,9 +118,10 @@ make
 \verbatim
 cd $REPOSIT_DIR/swig/Examples/reposit/simple
 export LD_LIBRARY_PATH=$REPOSIT_DIR/install/lib:$REPOSIT_DIR/swig/Examples/reposit/simple/lib
+export INSTALL_DIR=$REPOSIT_DIR/install
 make SWIG
 make
-cd $REPOSIT_DIR/swig/Examples/simple/Main
+cd $REPOSIT_DIR/swig/Examples/reposit/simple/Main
 ./mainSimpleLibAddin
 \endverbatim
 
@@ -129,6 +130,7 @@ cd $REPOSIT_DIR/swig/Examples/simple/Main
 \verbatim
 cd $REPOSIT_DIR/swig/Examples/reposit/complex
 export LD_LIBRARY_PATH=$REPOSIT_DIR/install/lib:$REPOSIT_DIR/swig/Examples/reposit/complex/lib
+export INSTALL_DIR=$REPOSIT_DIR/install
 make SWIG
 make
 cd $REPOSIT_DIR/swig/Examples/reposit/complex/ComplexLibAddin/Main
