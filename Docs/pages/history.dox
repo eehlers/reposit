@@ -37,7 +37,8 @@ BUILD
 
 FUNCTIONALITY
 
-- ...
+- Fixed bug in the autogeneration of the source code for the C++ addin, in which
+  the overwrite flag was always set to false - thanks to Michael Wassmann.
 
 REQUIRED PACKAGES
 
