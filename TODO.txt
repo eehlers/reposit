@@ -1,4 +1,16 @@
 - dynamic build
+- unify syntax for %rename, %rename2, %alias, ...
+- support for example values (as in gensrc)
+
+- at present, if a function parameter whose type is an enum has a default value, the default is implemented with a little hack where it is converted from a string to the enum e.g.:
+
+"Put" -> Put
+
+need to enhance this to allow default values for enums without having to use a string.
+
+- gensrc does not require defaults to be last, reposit does (because it uses valid C++ syntax).
+
+- test suite
 
 todo.txt for reposit
 ====================
