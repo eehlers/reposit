@@ -22,8 +22,8 @@
     \brief Conversion function vectorToOper - Convert STL vector to Excel OPER
 */
 
-#ifndef ohxl_conversions_vectortooper_hpp
-#define ohxl_conversions_vectortooper_hpp
+#ifndef rpxl_conversions_vectortooper_hpp
+#define rpxl_conversions_vectortooper_hpp
 
 #include <rpxl/rpxldefines.hpp>
 #include <rpxl/conversions/scalartooper.hpp>

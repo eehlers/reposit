@@ -22,8 +22,8 @@
 \brief Class Processor - Restore an Object's state after deserialization
 */
 
-#ifndef oh_processor_hpp
-#define oh_processor_hpp
+#ifndef rp_processor_hpp
+#define rp_processor_hpp
 
 #include <map>
 #include <string>

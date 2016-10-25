@@ -22,8 +22,8 @@
     \brief Class RepositoryXL - Excel-specific enhancements to the Repository class
 */
 
-#ifndef ohxl_repositoryxl_hpp
-#define ohxl_repositoryxl_hpp
+#ifndef rpxl_repositoryxl_hpp
+#define rpxl_repositoryxl_hpp
 
 #include <rp/repository.hpp>
 #include <xlsdk/xlsdkdefines.hpp>

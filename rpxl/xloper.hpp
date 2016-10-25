@@ -21,8 +21,8 @@
     \brief Class Xloper - Perform RAII for Excel's XLOPER datatype
 */
 
-#ifndef oh_xloper_hpp
-#define oh_xloper_hpp
+#ifndef rp_xloper_hpp
+#define rp_xloper_hpp
 
 #include <xlsdk/xlsdkdefines.hpp>
 

@@ -21,8 +21,8 @@
     \brief General utility functions for the Excel platform
 */
 
-#ifndef ohxl_utilities_hpp
-#define ohxl_utilities_hpp
+#ifndef rpxl_utilities_hpp
+#define rpxl_utilities_hpp
 
 #include <rp/rpdefines.hpp>
 #include <xlsdk/xlsdkdefines.hpp>

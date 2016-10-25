@@ -21,8 +21,8 @@
     \brief Class FunctionCall - Handle state related to the function in progress
 */
 
-#ifndef ohxl_functioncall_hpp
-#define ohxl_functioncall_hpp
+#ifndef rpxl_functioncall_hpp
+#define rpxl_functioncall_hpp
 
 #include <xlsdk/xlsdkdefines.hpp>
 #include <rpxl/rpxldefines.hpp>

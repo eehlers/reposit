@@ -17,8 +17,8 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 */
 
-#ifndef ohxl_defines_hpp
-#define ohxl_defines_hpp
+#ifndef rpxl_defines_hpp
+#define rpxl_defines_hpp
 
 #endif
 

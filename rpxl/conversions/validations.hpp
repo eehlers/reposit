@@ -21,8 +21,8 @@
     \brief Miscellaneous validation routines
 */
 
-#ifndef ohxl_conversions_validations_hpp
-#define ohxl_conversions_validations_hpp
+#ifndef rpxl_conversions_validations_hpp
+#define rpxl_conversions_validations_hpp
 
 #include <rp/rpdefines.hpp>
 #include <xlsdk/xlsdkdefines.hpp>

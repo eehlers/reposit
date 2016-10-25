@@ -24,8 +24,8 @@
     \brief reposit utilities
 */
 
-#ifndef oh_utilities_hpp
-#define oh_utilities_hpp
+#ifndef rp_utilities_hpp
+#define rp_utilities_hpp
 
 #include <rp/rpdefines.hpp>
 #include <rp/exception.hpp>

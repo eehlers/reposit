@@ -22,8 +22,8 @@
     \brief Class ConvertOper - Perform datatype conversions of OPERs
 */
 
-#ifndef oh_convert_oper_hpp
-#define oh_convert_oper_hpp
+#ifndef rp_convert_oper_hpp
+#define rp_convert_oper_hpp
 
 #include <rp/rpdefines.hpp>
 #include <xlsdk/xlsdkdefines.hpp>

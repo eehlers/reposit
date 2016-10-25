@@ -21,8 +21,8 @@
     \brief Conversion function operToVector - convert an OPER to a std::vector
 */
 
-#ifndef ohxl_conversions_opertovector_hpp
-#define ohxl_conversions_opertovector_hpp
+#ifndef rpxl_conversions_opertovector_hpp
+#define rpxl_conversions_opertovector_hpp
 
 #include <rpxl/convert_oper.hpp>
 #include <rpxl/utilities/xlutilities.hpp>
@@ -41,32 +41,6 @@ namespace reposit {
     std::vector<T> operToVector(const OPER &xVector, const std::string &paramName) {
         return operToVectorImpl<T>(ConvertOper(xVector, false), paramName);
     }
-
-    //! Helper template wrapper for operToVectorImpl
-    /*! \li Accept an OPER as input and wrap this in class ConvertOper
-        \li Specify VariantToScalarObject as the algorithm to be used
-
-        This simplifies syntax in client applications.
-    */
-    template <class LibraryClass, class ObjectClass>
-    std::vector<boost::shared_ptr<LibraryClass> >
-    operToObjectVector(
-        const OPER &xVector, 
-        const std::string &paramName) {
-
-        return operToVectorImpl<
-            boost::shared_ptr<LibraryClass>, 
-            VariantToScalarObject<ConvertOper, LibraryClass, ObjectClass> >
-                (ConvertOper(xVector, false), paramName);
-    }
-
-    //template <class T>
-    //std::vector<T> operToEnumVector(
-    //    const OPER &xVector, 
-    //    const std::string &paramName) {
-
-    //    return operToVectorImpl<T, Create<T> >(xVector, paramName);
-    //}
 
     struct X {
         OPER o;
@@ -115,17 +89,6 @@ namespace reposit {
                 << "' to type '" << typeid(T).name() << "' : " << e.what());
         }
     }
-
-    //! Convert an Excel FP to a std::vector of type T.
-    template <class T>
-    std::vector<T> fpToVector(const FP &fpVector) {
-        std::vector<T> ret;
-        ret.reserve(fpVector.rows * fpVector.columns);
-        for (int i=0; i<fpVector.rows * fpVector.columns; ++i)
-            ret.push_back(fpVector.array[i]);
-        return ret;
-    }
-
 }
 
 #endif

@@ -21,8 +21,8 @@
     \brief Class Configuration - Global configuration information
 */
 
-#ifndef ohxl_configuration_hpp
-#define ohxl_configuration_hpp
+#ifndef rpxl_configuration_hpp
+#define rpxl_configuration_hpp
 
 #include <rp/singleton.hpp>
 

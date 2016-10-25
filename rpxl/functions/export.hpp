@@ -16,8 +16,8 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 */
 
-#ifndef ohxl_export_hpp
-#define ohxl_export_hpp
+#ifndef rpxl_export_hpp
+#define rpxl_export_hpp
 
 #ifdef _WIN64
 #  define EXPORT_PREFIX

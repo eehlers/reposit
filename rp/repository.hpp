@@ -22,8 +22,8 @@
     \brief Class Repository - Maintain a store of Objects
 */
 
-#ifndef oh_repository_hpp
-#define oh_repository_hpp
+#ifndef rp_repository_hpp
+#define rp_repository_hpp
 
 #include <rp/objectwrapper.hpp>
 #include <rp/rpdefines.hpp>

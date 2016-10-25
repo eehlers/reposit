@@ -22,8 +22,8 @@
     \brief Class CallingRange - Processing for the host cell of an Object
 */
 
-#ifndef ohxl_callingrange_hpp
-#define ohxl_callingrange_hpp
+#ifndef rpxl_callingrange_hpp
+#define rpxl_callingrange_hpp
 
 #include <rp/iless.hpp>
 #include <rpxl/objectwrapperxl.hpp>

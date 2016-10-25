@@ -21,8 +21,8 @@
     \brief Class ObjectWrapperXL - Customization of the ObjectWrapper class for the Excel platform
 */
 
-#ifndef oh_objectwrapperxl_hpp
-#define oh_objectwrapperxl_hpp
+#ifndef rp_objectwrapperxl_hpp
+#define rp_objectwrapperxl_hpp
 
 #include <rp/objectwrapper.hpp>
 

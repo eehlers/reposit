@@ -21,8 +21,8 @@
     \brief includes for all Excel conversion functions
 */
 
-#ifndef ohxl_conversions_all_hpp
-#define ohxl_conversions_all_hpp
+#ifndef rpxl_conversions_all_hpp
+#define rpxl_conversions_all_hpp
 
 #include <rp/conversions/coerce.hpp>
 #include <rp/conversions/getobjectvector.hpp>

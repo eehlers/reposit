@@ -21,8 +21,8 @@
     \brief Support for Excel functions which loop on an input value
 */
 
-#ifndef ohxl_loop_hpp
-#define ohxl_loop_hpp
+#ifndef rpxl_loop_hpp
+#define rpxl_loop_hpp
 
 #include <rpxl/repositxl.hpp>
 #include <rpxl/utilities/xlutilities.hpp>

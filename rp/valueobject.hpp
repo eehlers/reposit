@@ -23,8 +23,8 @@
     \brief Class ValueObject - Captures the inputs to an Object
 */
 
-#ifndef oh_valueobject_hpp
-#define oh_valueobject_hpp
+#ifndef rp_valueobject_hpp
+#define rp_valueobject_hpp
 
 #include <string>
 #include <vector>

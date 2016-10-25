@@ -21,8 +21,8 @@
     \brief basic support for the singleton pattern
 */
 
-#ifndef oh_singleton_hpp
-#define oh_singleton_hpp
+#ifndef rp_singleton_hpp
+#define rp_singleton_hpp
 
 #include <rp/rpdefines.hpp>
 #include <boost/shared_ptr.hpp>

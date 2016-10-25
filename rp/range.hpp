@@ -21,8 +21,8 @@
     \brief class Range - Container for a matrix of doubles
 */
 
-#ifndef oh_range_hpp
-#define oh_range_hpp
+#ifndef rp_range_hpp
+#define rp_range_hpp
 
 #include <rp/object.hpp>
 #include <vector>

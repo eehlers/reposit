@@ -21,8 +21,8 @@
     \brief Conversion function operToMatrix - convert an OPER to a matrix
 */
 
-#ifndef ohxl_conversions_opertomatrix_hpp
-#define ohxl_conversions_opertomatrix_hpp
+#ifndef rpxl_conversions_opertomatrix_hpp
+#define rpxl_conversions_opertomatrix_hpp
 
 #include <rpxl/convert_oper.hpp>
 #include <vector>

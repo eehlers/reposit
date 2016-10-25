@@ -22,8 +22,8 @@
     \brief Class SerializationFactory - A Singleton wrapping the boost::serialization interface
 */
 
-#ifndef oh_serialization_factory_hpp
-#define oh_serialization_factory_hpp
+#ifndef rp_serialization_factory_hpp
+#define rp_serialization_factory_hpp
 
 #include <rp/rpdefines.hpp>
 #include <rp/object.hpp>

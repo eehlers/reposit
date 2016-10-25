@@ -21,8 +21,8 @@
     \brief Conversion function matrixToOper - Convert matrix to Excel OPER
 */
 
-#ifndef ohxl_conversions_matrixtooper_hpp
-#define ohxl_conversions_matrixtooper_hpp
+#ifndef rpxl_conversions_matrixtooper_hpp
+#define rpxl_conversions_matrixtooper_hpp
 
 #include <rpxl/conversions/scalartooper.hpp>
 #include <vector>

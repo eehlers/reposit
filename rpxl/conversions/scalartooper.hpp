@@ -22,8 +22,8 @@
     \brief Conversion function scalarToOper - convert an Excel OPER to a scalar value
 */
 
-#ifndef ohxl_conversions_scalartooper_hpp
-#define ohxl_conversions_scalartooper_hpp
+#ifndef rpxl_conversions_scalartooper_hpp
+#define rpxl_conversions_scalartooper_hpp
 
 #include <rp/rpdefines.hpp>
 #include <xlsdk/xlsdkdefines.hpp>
@@ -44,7 +44,6 @@ namespace reposit {
     DLL_API void scalarToOper(const std::string &value, OPER &xString, bool expandVector = true);
     //! Convert a property_t to an OPER.
     DLL_API void scalarToOper(const property_t &value, OPER &xAny, bool expandVector = true);
-
 }
 
 #endif

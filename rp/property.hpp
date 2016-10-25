@@ -23,8 +23,8 @@
     \brief Class property_t - A class to represent any of a selection of native C++ datatypes
 */
 
-#ifndef oh_property_hpp
-#define oh_property_hpp
+#ifndef rp_property_hpp
+#define rp_property_hpp
 
 #include <rp/rpdefines.hpp>
 #include <rp/exception.hpp>

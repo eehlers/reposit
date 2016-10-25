@@ -21,8 +21,8 @@
     \brief Class Coerce - Support for automatic conversion of datatypes
 */
 
-#ifndef oh_conversions_coerce_hpp
-#define oh_conversions_coerce_hpp
+#ifndef rp_conversions_coerce_hpp
+#define rp_conversions_coerce_hpp
 
 #include <rp/exception.hpp>
 #include <sstream>
