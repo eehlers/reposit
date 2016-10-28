@@ -34,6 +34,8 @@ BUILD
   want to disable logging you can still do that by passing the argument
   --without-logging to configure, in which case any log messages just go
   to stdout.
+- Renamed function convert2 to convert.
+- In class ValueObject, renamed member function processVariant to processPrecedentID.
 
 FUNCTIONALITY
 
@@ -45,7 +47,7 @@ REQUIRED PACKAGES
 - Boost.  If you require logging then you need boost 1.54.  If not then you can
   use much older versions of boost (back to 1.34?).
 - reposit SWIG module
-- PCRE (a prerequeisite of SWIG)
+- PCRE (a prerequisite of SWIG)
 
 <strong>Release 1.7.0 - December 2015</strong>
 

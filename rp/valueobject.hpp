@@ -126,11 +126,11 @@ namespace reposit {
         //! Store the object ID in the list of precedents.
         void processPrecedentID(const std::string& precedentID);
         //! Extract the Object ID from the property_t and pass it to processPrecedentID()
-        void processVariant(property_t variantID);
+        void processPrecedentID(property_t variantID);
         //! Extract the Object IDs from the property_t vector and pass them to processPrecedentID()
-        void processVariant(const std::vector<property_t>& vecVariantID);
+        void processPrecedentID(const std::vector<property_t>& vecVariantID);
         //! Extract the Object IDs from the property_t matrix and pass them to processPrecedentID()
-        void processVariant(const std::vector<std::vector<property_t> >& vecVariantIDs);
+        void processPrecedentID(const std::vector<std::vector<property_t> >& vecVariantIDs);
         //@}
     protected:
         //! ID of the Object associated with this ValueObject.
@@ -152,23 +152,23 @@ namespace reposit {
     }
 
     // FIXME This function should take a const ref:
-    //inline void ValueObject::processVariant(const property_t& variantID){
-    inline void ValueObject::processVariant(property_t variantID){
+    //inline void ValueObject::processPrecedentID(const property_t& variantID){
+    inline void ValueObject::processPrecedentID(property_t variantID){
         std::string *objectID;
         if ((objectID = boost::get<std::string>(&variantID)) && !isNumeric(*objectID))
             processPrecedentID(*objectID);
     }
 
-    inline void ValueObject::processVariant(const std::vector<property_t>& vecVariantID){
+    inline void ValueObject::processPrecedentID(const std::vector<property_t>& vecVariantID){
         std::vector<property_t>::const_iterator iterator = vecVariantID.begin();
         for(; iterator != vecVariantID.end(); ++iterator)
-            processVariant(*iterator);
+            processPrecedentID(*iterator);
     }
 
-    inline void ValueObject::processVariant(const std::vector<std::vector<property_t> >& vecVariantIDs){
+    inline void ValueObject::processPrecedentID(const std::vector<std::vector<property_t> >& vecVariantIDs){
         std::vector<std::vector<property_t> >::const_iterator iterator = vecVariantIDs.begin();
         for(; iterator != vecVariantIDs.end(); ++iterator){
-            processVariant(*iterator);
+            processPrecedentID(*iterator);
         }
     }
 
