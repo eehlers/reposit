@@ -54,7 +54,7 @@ XLL_DEC bool *ohRepositoryCollectGarbage(
 
         // convert input datatypes to C++ datatypes
 
-        bool DeletePermanentCpp = reposit::convert2<bool>(
+        bool DeletePermanentCpp = reposit::convert<bool>(
             reposit::ConvertOper(*DeletePermanent), "DeletePermanent", false);
 
         // invoke the utility function
@@ -99,7 +99,7 @@ XLL_DEC bool *ohRepositoryDeleteAllObjects(
 
         // convert input datatypes to C++ datatypes
 
-        bool DeletePermanentCpp = reposit::convert2<bool>(
+        bool DeletePermanentCpp = reposit::convert<bool>(
             reposit::ConvertOper(*DeletePermanent), "DeletePermanent", false);
 
         // invoke the utility function

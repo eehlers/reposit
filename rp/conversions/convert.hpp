@@ -19,23 +19,23 @@
 */
 
 /*! \file
-    \brief Generic conversion functions - used to convert from property_t or OPER to an C++ data type
+    \brief Generic conversion functions - used to convert from property_t or OPER to a C++ data type
 */
 
-#ifndef rp_Conversions_convert2_hpp
-#define rp_Conversions_convert2_hpp
+#ifndef rp_conversions_convert_hpp
+#define rp_conversions_convert_hpp
+
+#include <string>
+#include <rp/property.hpp>
 
 namespace reposit {
 
-    /*! \name convert2
+    /*! \name convert
     The functions in this file are used by addin functions to convert their
     inputs into types recognized by the underlying library.
 
     All of these functions are implemented as overrides of template function
-    "convert2".
-
-    The reason that these functions are called "convert2" is because they
-    replace an old function "convert" which has now been deleted.
+    "convert".
 
     These functions operate on an input value of type container_t.
     \li On C++, container_t is a variant.
@@ -47,7 +47,7 @@ namespace reposit {
         rethrow.
     */
     template<class value_t, class container_t>
-    value_t convert2(const container_t& c) {
+    value_t convert(const container_t& c) {
         try {
             return c.operator value_t();
         }
@@ -63,9 +63,9 @@ namespace reposit {
         this function behaves the same as the one above.
     */
     template<class value_t, class container_t>
-    value_t convert2(const container_t& c, const std::string &parameterName) {
+    value_t convert(const container_t& c, const std::string &parameterName) {
         try {
-            return convert2<value_t, container_t>(c);
+            return convert<value_t, container_t>(c);
         }
         catch(const std::exception& e) {
             RP_FAIL("Error converting parameter '" << parameterName << "' : '" << e.what());
@@ -77,11 +77,11 @@ namespace reposit {
         that the input is missing, which on Excel is true for inputs of type \#NA.
     */
     template<class value_t, class container_t>
-    value_t convert2(const container_t& c, const std::string &parameterName, const value_t& defaultValue) {
+    value_t convert(const container_t& c, const std::string &parameterName, const value_t& defaultValue) {
         try {
             if(c.missing())    
                 return defaultValue;
-            return convert2<value_t, container_t>(c);
+            return convert<value_t, container_t>(c);
         }
         catch(const std::exception& e) {
             RP_FAIL("Error converting parameter '" << parameterName << "' : '" << e.what());
@@ -98,12 +98,12 @@ namespace reposit {
         \li If the attempted conversion throws.
     */
     template<class value_t, class container_t>
-    value_t convert2(const container_t& c, const std::string &parameterName, 
+    value_t convert(const container_t& c, const std::string &parameterName, 
             const value_t& defaultValue, const value_t& errorValue) {
         try {
             if(c.error())    
                 return errorValue;
-            return convert2<value_t, container_t>(c, parameterName, defaultValue);
+            return convert<value_t, container_t>(c, parameterName, defaultValue);
         }
         catch(const std::exception&) {
             return errorValue;

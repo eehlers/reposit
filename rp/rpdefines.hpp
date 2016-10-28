@@ -83,6 +83,14 @@
 #define STRICMP strcasecmp
 #endif
 
+// Identify 64-bit - there is probably a better way.
+#if defined(__GNUC__) && defined(__x86_64__)
+#define RP_64_BIT
+#endif
+#if defined(_WIN64)
+#define RP_64_BIT
+#endif
+
 //! Get a boost shared pointer to a class derived from Object.
 #define RP_GET_OBJECT( NAME, ID, OBJECT_CLASS ) \
     boost::shared_ptr<OBJECT_CLASS > NAME; \

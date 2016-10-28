@@ -129,7 +129,6 @@ namespace reposit {
         }
         return ret;
     }
-
 }
 
 #endif

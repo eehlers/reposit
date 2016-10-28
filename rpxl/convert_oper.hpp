@@ -79,7 +79,7 @@ namespace reposit {
         operator property_t() const;
         //@}
 
-        //! Deduced C++ typeid - used in the convert2 templates
+        //! Deduced C++ typeid - used in the convert templates
         const std::type_info& type() const;
 
         //! Return a const pointer to the underlying OPER.

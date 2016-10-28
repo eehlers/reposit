@@ -80,7 +80,7 @@ namespace reposit {
             std::vector<T> ret;
             ret.reserve(xMulti->val.array.rows * xMulti->val.array.columns);
             for (int i=0; i<xMulti->val.array.rows * xMulti->val.array.columns; ++i) {
-                ret.push_back(convert2<T>(ConvertOper(xMulti->val.array.lparray[i])));
+                ret.push_back(convert<T>(ConvertOper(xMulti->val.array.lparray[i])));
             }
 
             return ret;

@@ -52,7 +52,7 @@ namespace reposit {
             boost::get<bool>(valueObject->getProperty("PERMANENT"));
 
         std::vector<std::vector<double> > values = 
-            reposit::matrix::convert2<double>(valueObject->getProperty("VALUES"), "VALUES");
+            reposit::matrix::convert<double>(valueObject->getProperty("VALUES"), "VALUES");
 
         boost::shared_ptr<Object> object(new Range(valueObject, values, permanent));
         return object;
@@ -63,7 +63,7 @@ namespace reposit {
         return boost::shared_ptr<Object>(
 			new Group(
 				valueObject,
-				vector::convert2<std::string>(valueObject->getProperty("OBJECTIDLIST"), "OBJECTIDLIST"),
+				vector::convert<std::string>(valueObject->getProperty("OBJECTIDLIST"), "OBJECTIDLIST"),
 				// FIXME - Implement ValueObject::permanent() and call that instead?
 				boost::get<bool>(valueObject->getProperty("PERMANENT"))));
     }

@@ -136,7 +136,7 @@ XLL_DEC char *ohLogSetFile(
 
         // convert input datatypes to C++ datatypes
 
-        long LogLevelCpp = reposit::convert2<long>(
+        long LogLevelCpp = reposit::convert<long>(
             reposit::ConvertOper(*LogLevel), "LogLevel", 4);
 
         // invoke the utility function
@@ -224,7 +224,7 @@ XLL_DEC bool *ohLogWriteMessage(
 
         // convert input datatypes to C++ datatypes
 
-        long LogLevelCpp = reposit::convert2<long>(
+        long LogLevelCpp = reposit::convert<long>(
             reposit::ConvertOper(*LogLevel), "LogLevel", 4);
 
         // invoke the utility function

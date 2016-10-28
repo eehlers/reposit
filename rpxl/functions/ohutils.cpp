@@ -141,7 +141,7 @@ XLL_DEC OPER *ohStringSplit(
 
         // convert input datatypes to C++ datatypes
 
-        bool ConcatenateDelimCpp = reposit::convert2<bool>(
+        bool ConcatenateDelimCpp = reposit::convert<bool>(
             reposit::ConvertOper(*ConcatenateDelim), "ConcatenateDelim", false);
 
         // invoke the utility function

@@ -102,9 +102,9 @@ namespace reposit { namespace ValueObjects {
         else if(strcmp(nameUpper.c_str(), "CLASSNAME")==0)
             className_ = boost::get<std::string>(value);
         else if(strcmp(nameUpper.c_str(), "VALUES")==0)
-            Values_ = reposit::matrix::convert2<double>(value, nameUpper);
+            Values_ = reposit::matrix::convert<double>(value, nameUpper);
         else if(strcmp(nameUpper.c_str(), "PERMANENT")==0)
-            Permanent_ = reposit::convert2<bool>(value);
+            Permanent_ = reposit::convert<bool>(value);
         else
             RP_FAIL("Error: attempt to set non-existent Property: '" + name + "'");
     }

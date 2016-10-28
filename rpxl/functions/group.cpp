@@ -61,7 +61,7 @@ XLL_DEC char *rpGroup(
             reposit::operToVector<std::string>(
                 *ObjectIdList, "ObjectIdList");
 
-        bool PermanentCpp = reposit::convert2<bool>(
+        bool PermanentCpp = reposit::convert<bool>(
             reposit::ConvertOper(*Permanent), "Permanent", false);
 
         // Strip the Excel cell update counter suffix from Object IDs

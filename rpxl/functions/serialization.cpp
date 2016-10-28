@@ -59,13 +59,13 @@ XLL_DEC OPER *ohObjectLoad(
 
         // convert input datatypes to C++ datatypes
 
-        std::string PatternCpp = reposit::convert2<std::string>(
+        std::string PatternCpp = reposit::convert<std::string>(
             reposit::ConvertOper(*Pattern), "Pattern", ".*\\.xml");
 
-        bool RecurseCpp = reposit::convert2<bool>(
+        bool RecurseCpp = reposit::convert<bool>(
             reposit::ConvertOper(*Recurse), "Recurse", false);
 
-        bool OverwriteCpp = reposit::convert2<bool>(
+        bool OverwriteCpp = reposit::convert<bool>(
             reposit::ConvertOper(*Overwrite), "Overwrite", false);
 
         // invoke the utility function
@@ -118,7 +118,7 @@ XLL_DEC OPER *ohObjectLoadString(
 
         // convert input datatypes to C++ datatypes
 
-        bool OverwriteCpp = reposit::convert2<bool>(
+        bool OverwriteCpp = reposit::convert<bool>(
             reposit::ConvertOper(*Overwrite), "Overwrite", false);
 
         // invoke the utility function
@@ -175,10 +175,10 @@ XLL_DEC long *ohObjectSave(
             reposit::operToVector<std::string>(
                 *ObjectList, "ObjectList");
 
-        bool OverwriteCpp = reposit::convert2<bool>(
+        bool OverwriteCpp = reposit::convert<bool>(
             reposit::ConvertOper(*Overwrite), "Overwrite", false);
 
-        bool IncludeGroupsCpp = reposit::convert2<bool>(
+        bool IncludeGroupsCpp = reposit::convert<bool>(
             reposit::ConvertOper(*IncludeGroups), "IncludeGroups", true);
 
         // invoke the utility function
@@ -234,7 +234,7 @@ XLL_DEC char *ohObjectSaveString(
             reposit::operToVector<std::string>(
                 *ObjectList, "ObjectList");
 
-        bool OverwriteCpp = reposit::convert2<bool>(
+        bool OverwriteCpp = reposit::convert<bool>(
             reposit::ConvertOper(*Overwrite), "Overwrite", false);
 
         // convert input datatypes to Object references

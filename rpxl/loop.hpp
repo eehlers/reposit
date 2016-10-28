@@ -41,7 +41,7 @@ namespace reposit {
                 XLOPER &xIn, 
                 XLOPER &xOut,
                 bool expandVector) {
-            InputType inputItem = reposit::convert2<InputType>(ConvertOper(xIn));
+            InputType inputItem = reposit::convert<InputType>(ConvertOper(xIn));
             OutputType returnItem = loopFunction(inputItem);
             scalarToOper(returnItem, xOut, expandVector);
         }
@@ -55,7 +55,7 @@ namespace reposit {
                 XLOPER &xIn, 
                 XLOPER &xOut,
                 bool expandVector) {
-            InputType inputItem = reposit::convert2<InputType>(ConvertOper(xIn));
+            InputType inputItem = reposit::convert<InputType>(ConvertOper(xIn));
             loopFunction(inputItem);
             scalarToOper(true, xOut, expandVector);
         }

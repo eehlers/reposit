@@ -34,7 +34,7 @@
 #include <boost/serialization/access.hpp>
 #include <boost/serialization/nvp.hpp>
 #include <boost/serialization/variant.hpp>
-#include <rp/conversions/convert2.hpp>
+#include <rp/conversions/convert.hpp>
 
 namespace reposit {
 
@@ -126,12 +126,12 @@ namespace reposit {
     //! Template function to convert a vector from type property_t to type value_t
     namespace vector {
         template<class value_t>
-        std::vector<value_t> convert2(const property_t& c, const std::string &parameterName) {
+        std::vector<value_t> convert(const property_t& c, const std::string &parameterName) {
             try {
                 const property_t::vector& vct = boost::get<property_t::vector>(c);
                 std::vector<value_t> ret;
                 for(property_t::vector::const_iterator i = vct.begin(); i != vct.end(); ++i) {
-                    ret.push_back(reposit::convert2<value_t, property_t>(*i)); //implicit property_t constructor call!
+                    ret.push_back(reposit::convert<value_t, property_t>(*i)); //implicit property_t constructor call!
                 }
                 return ret;
             } catch(const std::exception &e) {
@@ -144,7 +144,7 @@ namespace reposit {
     //! Template function to convert a matrix from type property_t to type value_t
     namespace matrix {
         template<class value_t>
-        std::vector<std::vector<value_t> > convert2(const property_t& c, const std::string &parameterName) {
+        std::vector<std::vector<value_t> > convert(const property_t& c, const std::string &parameterName) {
             try {
                 const property_t::vector& matrix = boost::get<property_t::vector>(c);
                 std::vector<std::vector<value_t> > ret;
@@ -152,7 +152,7 @@ namespace reposit {
                     std::vector<value_t> rowOut;
                     const property_t::vector& rowIn = boost::get<property_t::vector>(*i);
                     for(property_t::vector::const_iterator j = rowIn.begin(); j != rowIn.end(); ++j) {
-                        rowOut.push_back(reposit::convert2<value_t, property_t>(*j)); //implicit property_t constructor call!
+                        rowOut.push_back(reposit::convert<value_t, property_t>(*j)); //implicit property_t constructor call!
                     }
                     ret.push_back(rowOut);                
                 }
