@@ -65,7 +65,7 @@ void makeAccount(
     AccountExample::Account::Type typeEnum =
         reposit::Create<AccountExample::Account::Type>()(type);
 
-    double accountBalance = reposit::convert2<double>(balance, "balance", 100.00);
+    double accountBalance = reposit::convert<double>(balance, "balance", 100.00);
 
     boost::shared_ptr<reposit::Object> object(
         new AccountExample::AccountObject(

@@ -215,11 +215,11 @@ DLLEXPORT char *ohAccount(
         RP_GET_REFERENCE(customerRef, customer,
             AccountExample::CustomerObject, AccountExample::Customer)
 
-        double balanceDouble = reposit::convert2<double>(
+        double balanceDouble = reposit::convert<double>(
             reposit::ConvertOper(*balance), "balance", 100.00);
 
         reposit::property_t balanceProperty =
-            reposit::convert2<reposit::property_t>(
+            reposit::convert<reposit::property_t>(
                 reposit::ConvertOper(*balance), "balance");
 
         AccountExample::Account::Type typeEnum =

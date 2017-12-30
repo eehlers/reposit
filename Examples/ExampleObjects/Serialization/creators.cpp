@@ -32,10 +32,10 @@ namespace AccountExample {
     boost::shared_ptr<reposit::Object> createAccount(
         const boost::shared_ptr<reposit::ValueObject> &valueObject) {
 
-        std::string customer = reposit::convert2<std::string>(valueObject->getProperty("Customer"));
-        bool permanent = reposit::convert2<bool>(valueObject->getProperty("Permanent"));
-        std::string type = reposit::convert2<std::string>(valueObject->getProperty("Type"));
-        long number = reposit::convert2<long>(valueObject->getProperty("Number"));
+        std::string customer = reposit::convert<std::string>(valueObject->getProperty("Customer"));
+        bool permanent = reposit::convert<bool>(valueObject->getProperty("Permanent"));
+        std::string type = reposit::convert<std::string>(valueObject->getProperty("Type"));
+        long number = reposit::convert<long>(valueObject->getProperty("Number"));
         reposit::property_t balance = valueObject->getProperty("Balance");
 
         RP_GET_REFERENCE(customerRef, customer,
@@ -43,7 +43,7 @@ namespace AccountExample {
 
         Account::Type typeEnum = reposit::Create<Account::Type>()(type);
 
-        double accountBalance = reposit::convert2<double>(balance, "Balance", 100.00);
+        double accountBalance = reposit::convert<double>(balance, "Balance", 100.00);
 
         boost::shared_ptr<reposit::Object> object(
             new AccountObject(valueObject, customerRef, typeEnum, number, accountBalance, permanent));
@@ -53,9 +53,9 @@ namespace AccountExample {
     boost::shared_ptr<reposit::Object> createCustomer(
         const boost::shared_ptr<reposit::ValueObject> &valueObject) {
 
-        bool permanent = reposit::convert2<bool>(valueObject->getProperty("Permanent"));
-        std::string name = reposit::convert2<std::string>(valueObject->getProperty("name"));
-        long age = reposit::convert2<long>(valueObject->getProperty("age"));
+        bool permanent = reposit::convert<bool>(valueObject->getProperty("Permanent"));
+        std::string name = reposit::convert<std::string>(valueObject->getProperty("name"));
+        long age = reposit::convert<long>(valueObject->getProperty("age"));
 
         boost::shared_ptr<reposit::Object> object(
             new CustomerObject(valueObject, name, age, permanent));
