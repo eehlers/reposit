@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{e3ba243f-a4a8-4649-9f4c-0da411f525aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="conversions">
+      <UniqueIdentifier>{77a5f8a7-de57-469a-830b-c7fb630f7f1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utilities">
+      <UniqueIdentifier>{b509a281-0da7-4a92-80d8-3ed03fe48157}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enumerations">
+      <UniqueIdentifier>{0dab5e33-dece-4759-b996-512bd44d44b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="valueobjects">
+      <UniqueIdentifier>{dc49e26d-2c05-40b2-aea5-0fb94cd0fddc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="rp\exception.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\group.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\iless.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\libraryobject.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\object.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\objecthandler.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\objectwrapper.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\observable.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\processor.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\property.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\range.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\repository.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\rpdefines.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\serializationfactory.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\singleton.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\valueobject.hpp">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\conversions\coerce.hpp">
+      <Filter>conversions</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\conversions\convert2.hpp">
+      <Filter>conversions</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\conversions\getobjectvector.hpp">
+      <Filter>conversions</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\addin.hpp">
+      <Filter>utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\auto_link.hpp">
+      <Filter>utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\logger.hpp">
+      <Filter>utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\utilities.hpp">
+      <Filter>utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\enumerations\enumregistry.hpp">
+      <Filter>enumerations</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\enumerations\registry.hpp">
+      <Filter>enumerations</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\enumerations\typefactory.hpp">
+      <Filter>enumerations</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\valueobjects\vo_all.hpp">
+      <Filter>valueobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\valueobjects\vo_group.hpp">
+      <Filter>valueobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="rp\valueobjects\vo_range.hpp">
+      <Filter>valueobjects</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="rp\processor.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="rp\repository.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="rp\serializationfactory.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="rp\addin.cpp">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="rp\logger.cpp">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="rp\utilities.cpp">
+      <Filter>utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="rp\enumerations\enumregistry.cpp">
+      <Filter>enumerations</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

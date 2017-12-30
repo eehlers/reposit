@@ -24,20 +24,20 @@
 #include <rp/rpdefines.hpp>
 
 // select toolset:
-#if (_MSC_VER < 1400)
-#  error "unsupported Microsoft compiler"
-#elif (_MSC_VER == 1400)
-#  define REPOSIT_LIB_TOOLSET "vc80"
-#elif (_MSC_VER == 1500)
-#  define REPOSIT_LIB_TOOLSET "vc90"
-#elif (_MSC_VER == 1600)
-#  define REPOSIT_LIB_TOOLSET "vc100"
-#elif (_MSC_VER == 1700)
-#  define REPOSIT_LIB_TOOLSET "vc110"
-#elif (_MSC_VER == 1800)
+#if (_MSC_VER >= 1910)
+#  define REPOSIT_LIB_TOOLSET "vc141"
+#elif (_MSC_VER >= 1900)
+#  define REPOSIT_LIB_TOOLSET "vc140"
+#elif (_MSC_VER >= 1800)
 #  define REPOSIT_LIB_TOOLSET "vc120"
+#elif (_MSC_VER >= 1700)
+#  define REPOSIT_LIB_TOOLSET "vc110"
+#elif (_MSC_VER >= 1600)
+#  define REPOSIT_LIB_TOOLSET "vc100"
+#elif (_MSC_VER >= 1500)
+#  define REPOSIT_LIB_TOOLSET "vc90"
 #else
-#  error "unknown Microsoft compiler"
+#  error "unsupported Microsoft compiler"
 #endif
 
 /*** libraries to be linked ***/

@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{04D7369F-47BC-46B0-A374-41635A9656D8}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="..\..\reposit.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\boost_current.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\boost_current.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\boost_current.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\boost_current.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27130.2010</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\build\$(rpCompilerTag)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>.\build\$(rpCompilerTag)\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\build\$(rpCompilerTag)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>.\build\$(rpCompilerTag)\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>.\build\$(rpCompilerTag)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>.\build\$(rpCompilerTag)\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>.\build\$(rpCompilerTag)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>.\build\$(rpCompilerTag)\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\xll/rpxll.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;XLL_EXPORTS;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\rpxll.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\</AssemblerListingLocation>
+      <ObjectFileName>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;Ws2_32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\xll\reposit-xll-$(rpCompilerTag)-mt-gd-1_8_0.xll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\xll\reposit-xll-$(rpCompilerTag)-mt-gd-1_8_0.pdb</ProgramDatabaseFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <ImportLibrary>..\..\lib\reposit-xll-$(rpCompilerTag)-mt-gd-1_8_0.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\xll/rpxll.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;XLL_EXPORTS;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\rpxll.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\</AssemblerListingLocation>
+      <ObjectFileName>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;Ws2_32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\xll\reposit-xll-$(rpCompilerTag)-mt-1_8_0.xll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\xll\reposit-xll-$(rpCompilerTag)-mt-1_8_0.pdb</ProgramDatabaseFile>
+      <OptimizeReferences>true</OptimizeReferences>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <ImportLibrary>..\..\lib\reposit-xll-$(rpCompilerTag)-mt-1_8_0.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\xll/rpxll.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;XLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\rpxll.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\</AssemblerListingLocation>
+      <ObjectFileName>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;Ws2_32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\xll\reposit-xll-$(rpCompilerTag)-$(Platform)-mt-gd-1_8_0.xll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\xll\reposit-xll-$(rpCompilerTag)-$(Platform)-mt-gd-1_8_0.pdb</ProgramDatabaseFile>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <ImportLibrary>..\..\lib\reposit-xll-$(rpCompilerTag)-$(Platform)-mt-gd-1_8_0.lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\xll/rpxll.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;XLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\rpxll.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\</AssemblerListingLocation>
+      <ObjectFileName>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\</ObjectFileName>
+      <ProgramDataBaseFileName>..\..\build\$(rpCompilerTag)\rpxll\$(Platform)\$(Configuration)\</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;Ws2_32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\xll\reposit-xll-$(rpCompilerTag)-$(Platform)-mt-1_8_0.xll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\xll\reposit-xll-$(rpCompilerTag)-$(Platform)-mt-1_8_0.pdb</ProgramDatabaseFile>
+      <OptimizeReferences>true</OptimizeReferences>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <ImportLibrary>..\..\lib\reposit-xll-$(rpCompilerTag)-$(Platform)-mt-1_8_0.lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\rp\auto_link.hpp" />
+    <ClInclude Include="..\..\rp\conversions\coerce.hpp" />
+    <ClInclude Include="..\..\rp\conversions\convert2.hpp" />
+    <ClInclude Include="..\..\rp\conversions\getobjectvector.hpp" />
+    <ClInclude Include="..\..\rp\enumerations\enumregistry.hpp" />
+    <ClInclude Include="..\..\rp\enumerations\registry.hpp" />
+    <ClInclude Include="..\..\rp\enumerations\typefactory.hpp" />
+    <ClInclude Include="..\..\rp\exception.hpp" />
+    <ClInclude Include="..\..\rp\group.hpp" />
+    <ClInclude Include="..\..\rp\iless.hpp" />
+    <ClInclude Include="..\..\rp\libraryobject.hpp" />
+    <ClInclude Include="..\..\rp\logger.hpp" />
+    <ClInclude Include="..\..\rp\object.hpp" />
+    <ClInclude Include="..\..\rp\objecthandler.hpp" />
+    <ClInclude Include="..\..\rp\objectwrapper.hpp" />
+    <ClInclude Include="..\..\rp\observable.hpp" />
+    <ClInclude Include="..\..\rp\processor.hpp" />
+    <ClInclude Include="..\..\rp\property.hpp" />
+    <ClInclude Include="..\..\rp\range.hpp" />
+    <ClInclude Include="..\..\rp\repository.hpp" />
+    <ClInclude Include="..\..\rp\rpdefines.hpp" />
+    <ClInclude Include="..\..\rp\serializationfactory.hpp" />
+    <ClInclude Include="..\..\rp\singleton.hpp" />
+    <ClInclude Include="..\..\rp\utilities.hpp" />
+    <ClInclude Include="..\..\rp\valueobject.hpp" />
+    <ClInclude Include="..\..\rp\valueobjects\vo_all.hpp" />
+    <ClInclude Include="..\..\rp\valueobjects\vo_group.hpp" />
+    <ClInclude Include="..\..\rp\valueobjects\vo_range.hpp" />
+    <ClInclude Include="..\callingrange.hpp" />
+    <ClInclude Include="..\configuration.hpp" />
+    <ClInclude Include="..\conversions\all.hpp" />
+    <ClInclude Include="..\conversions\matrixtooper.hpp" />
+    <ClInclude Include="..\conversions\opertomatrix.hpp" />
+    <ClInclude Include="..\conversions\opertovector.hpp" />
+    <ClInclude Include="..\conversions\scalartooper.hpp" />
+    <ClInclude Include="..\conversions\validations.hpp" />
+    <ClInclude Include="..\conversions\vectortooper.hpp" />
+    <ClInclude Include="..\convert_oper.hpp" />
+    <ClInclude Include="..\functioncall.hpp" />
+    <ClInclude Include="..\functions\export.hpp" />
+    <ClInclude Include="..\functions\functioncount.hpp" />
+    <ClInclude Include="..\loop.hpp" />
+    <ClInclude Include="..\objecthandlerxl.hpp" />
+    <ClInclude Include="..\objectwrapperxl.hpp" />
+    <ClInclude Include="..\rangereference.hpp" />
+    <ClInclude Include="..\register\register_all.hpp" />
+    <ClInclude Include="..\repositoryxl.hpp" />
+    <ClInclude Include="..\rpxldefines.hpp" />
+    <ClInclude Include="..\utilities\xlutilities.hpp" />
+    <ClInclude Include="..\xloper.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\rp\enumerations\enumregistry.cpp" />
+    <ClCompile Include="..\..\rp\logger.cpp" />
+    <ClCompile Include="..\..\rp\processor.cpp" />
+    <ClCompile Include="..\..\rp\repository.cpp" />
+    <ClCompile Include="..\..\rp\serializationfactory.cpp" />
+    <ClCompile Include="..\..\rp\utilities.cpp" />
+    <ClCompile Include="..\callingrange.cpp" />
+    <ClCompile Include="..\configuration.cpp" />
+    <ClCompile Include="..\conversions\scalartooper.cpp" />
+    <ClCompile Include="..\conversions\validations.cpp" />
+    <ClCompile Include="..\convert_oper.cpp" />
+    <ClCompile Include="..\functioncall.cpp" />
+    <ClCompile Include="..\functions\enumerations.cpp" />
+    <ClCompile Include="..\functions\garbagecollection.cpp" />
+    <ClCompile Include="..\functions\group.cpp" />
+    <ClCompile Include="..\functions\logging.cpp" />
+    <ClCompile Include="..\functions\manual.cpp" />
+    <ClCompile Include="..\functions\objects.cpp" />
+    <ClCompile Include="..\functions\ohutils.cpp" />
+    <ClCompile Include="..\functions\range.cpp" />
+    <ClCompile Include="..\functions\serialization.cpp" />
+    <ClCompile Include="..\functions\valueobjects.cpp" />
+    <ClCompile Include="..\objectwrapperxl.cpp" />
+    <ClCompile Include="..\rangereference.cpp" />
+    <ClCompile Include="..\register\addin.cpp" />
+    <ClCompile Include="..\register\register_all.cpp" />
+    <ClCompile Include="..\register\register_enumerations.cpp" />
+    <ClCompile Include="..\register\register_garbagecollection.cpp" />
+    <ClCompile Include="..\register\register_group.cpp" />
+    <ClCompile Include="..\register\register_logging.cpp" />
+    <ClCompile Include="..\register\register_objects.cpp" />
+    <ClCompile Include="..\register\register_ohutils.cpp" />
+    <ClCompile Include="..\register\register_range.cpp" />
+    <ClCompile Include="..\register\register_serialization.cpp" />
+    <ClCompile Include="..\register\register_valueobjects.cpp" />
+    <ClCompile Include="..\repositoryxl.cpp" />
+    <ClCompile Include="..\utilities\xlutilities.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\xlsdk\xlsdk.vcxproj">
+      <Project>{4bd77a1e-aae9-47a4-81fe-2308e5a460af}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
